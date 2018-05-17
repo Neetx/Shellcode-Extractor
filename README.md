@@ -21,13 +21,13 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-###CONTACTS:
+### CONTACTS:
 [Neetx](mailto:neetx@protonmail.com)
 
 ---
 Tool developed for study and research reasons, I hope it will be useful.
 
-###Usage
+### Usage
 
 Write assembly code, product an object file and the use this script in pipeline to objdump.
 
@@ -63,6 +63,6 @@ nobody@nobody:~$ objdump -d output.o | python shellcode_extractor.py
 Lenght: 1822
 ```
 ---
-###Testing:
+### Testing:
 
 Insert our shellcode into the empty string in shellcode_tester.c, compile it with gcc and run.
