@@ -25,29 +25,46 @@ CONTACTS:
 
 import sys, re
 
-if not sys.stdin.isatty():
-    try:
-        shellcode = ""
-        lenght = 0
-        while True:
-            item = sys.stdin.readline()
-            if item:
-                if re.match("^[ ]*[0-9a-f]*:.*$",item):
-                    item = item.split(":")[1].lstrip()
-                    x = item.split("\t")
-                    opcode = re.findall("[0-9a-f][0-9a-f]",x[0])
-                    for i in opcode:
-                        shellcode += "\\x" + i
-                        lenght += 1
-            else: 
-                break
-        if shellcode == "":
-            print("Nothing to extract")
-        else:    
-            print("\n" + shellcode)
-            print("\nLenght: " + str(lenght) + "\n")
-    except:
-        print("\nError! \n Usage:  objdump -d example.o | python3 shellcode_extractor.py")
-        pass
-else:
+def banner():
+    print(" _____ _          _ _               _        _____     _                  _         ")
+    print("/  ___| |        | | |             | |      |  ___|   | |                | |            ")
+    print("\\ `--.| |__   ___| | | ___ ___   __| | ___  | |____  _| |_ _ __ __ _  ___| |_ ___  _ __ ")
+    print(" `--. \\ '_ \\ / _ \\ | |/ __/ _ \\ / _` |/ _ \\ |  __\\ \\/ / __| '__/ _` |/ __| __/ _ \\| '__|")
+    print("/\\__/ / | | |  __/ | | (_| (_) | (_| |  __/ | |___>  <| |_| | | (_| | (__| || (_) | |   ")
+    print("\\____/|_| |_|\\___|_|_|\\___\\___/ \\__,_|\\___| \\____/_/\\_\\___|_|  \\__,_|\\___|\\__\\___/|_|   ")
+    print("                                                             Neext: neetx@protonmail.com")
+
+def error():
     print("\nError! \n Usage:  objdump -d example.o | python shellcode_extractor.py \n")
+
+def main():
+    if not sys.stdin.isatty():
+        try:
+            shellcode = ""
+            lenght = 0
+            while True:
+                item = sys.stdin.readline()
+                if item:
+                    if re.match("^[ ]*[0-9a-f]*:.*$", item):
+                        item = item.split(":")[1].lstrip()
+                        x = item.split("\t")
+                        opcode = re.findall("[0-9a-f][0-9a-f]",x[0])
+                        for i in opcode:
+                            shellcode += "\\x" + i
+                            lenght += 1
+                else: 
+                    break
+            if shellcode == "":
+                print("Nothing to extract")
+            else:    
+                print("\n" + shellcode)
+                print("\nLenght: " + str(lenght) + "\n")
+        except:
+            error()
+            pass
+    else:
+        error()
+
+if __name__ == "__main__":
+    banner()
+    main()
