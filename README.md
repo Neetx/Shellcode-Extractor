@@ -6,8 +6,8 @@ The goal is to extract the shellcode and its length from an object/binary file.
 
 ### Update 2022
 
-- The scripts is for python 3 now 
-- Shellcode tester for macos
+- The script is for python 3 
+- There is a shellcode tester for macos
 
 ### Usage
 
