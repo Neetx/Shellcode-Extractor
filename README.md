@@ -1,7 +1,7 @@
 ShellcodeExtractor
 ========
 
-Simple tool developed for study and research reasons, I hope it will be useful.
+Simple tool developed for study and research reasons, I hope it will be useful.  
 The goal is to extract the shellcode and its length from an object/binary file.
 
 
@@ -11,7 +11,7 @@ Write assembly code, product an object file and the use this script in pipeline 
 
 Example:
 
-The example is on Linux, but shellcode-extractor works on macos too.
+The example is on Linux, but shellcode-extractor works on macos too.  
 Let's write spwaning shell assembly code in spawnshell.asm (NASM)
 
 ```
