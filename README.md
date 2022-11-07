@@ -4,7 +4,7 @@ ShellcodeExtractor
 SHELLCODE-EXTRACTOR
 Tool used to extract shellcode and lenght from an object/binary file.
 
-Copyright (C) 2017  Neetx
+Copyright (C) 2022  Neetx
 
 This file is part of Shellcode-Extractor.
 
@@ -33,6 +33,7 @@ Write assembly code, product an object file and the use this script in pipeline 
 
 Example:
 
+The example is on Linux, but shellcode-extractor works on macos too.
 Let's write spwaning shell assembly code in spawnshell.asm ( NASM )
 
 ```
@@ -65,4 +66,4 @@ Lenght: 25
 ---
 ### Testing:
 
-Insert our shellcode into the empty string in shellcode_tester.c, compile it with gcc and run.
+Insert our shellcode into the empty string in shellcode_tester.c or shellcode_tester_macos.c, compile it with gcc and run (remember: on macos gcc is an alias or clang).

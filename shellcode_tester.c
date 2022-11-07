@@ -8,7 +8,7 @@ int main(){
 	mprotect((void*)((intptr_t)output & ~0xFFF), 8192, PROT_READ|PROT_EXEC);
 
 	int (*ret)();
-	ret =(int(*)())output;
+	ret = (int(*)())output;
 	(int)(*ret)();
 }
 

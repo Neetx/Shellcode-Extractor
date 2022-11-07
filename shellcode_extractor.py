@@ -2,7 +2,7 @@
 SHELLCODE-EXTRACTOR
 Tool used to extract shellcode and lenght from an object/binary file.
 
-Copyright (C) 2017  Neetx
+Copyright (C) 2022  Neetx
 
 This file is part of Shellcode-Extractor.
 
@@ -33,7 +33,7 @@ if not sys.stdin.isatty():
             item = sys.stdin.readline()
             if item:
                 if re.match("^[ ]*[0-9a-f]*:.*$",item):
-                    item =item.split(":")[1].lstrip()
+                    item = item.split(":")[1].lstrip()
                     x = item.split("\t")
                     opcode = re.findall("[0-9a-f][0-9a-f]",x[0])
                     for i in opcode:
@@ -42,12 +42,12 @@ if not sys.stdin.isatty():
             else: 
                 break
         if shellcode == "":
-            print "Nothing to extract"
+            print("Nothing to extract")
         else:    
-            print "\n" + shellcode
-            print "\nLenght: " + str(lenght) + "\n"
+            print("\n" + shellcode)
+            print("\nLenght: " + str(lenght) + "\n")
     except:
-        print "\nError! \n Usage:  objdump -d example.o | python shellcode_extractor.py" 
+        print("\nError! \n Usage:  objdump -d example.o | python3 shellcode_extractor.py")
         pass
 else:
-    print "\nError! \n Usage:  objdump -d example.o | python shellcode_extractor.py \n" 
+    print("\nError! \n Usage:  objdump -d example.o | python shellcode_extractor.py \n")
