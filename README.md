@@ -1,14 +1,9 @@
 ShellcodeExtractor
 ========
 
-SHELLCODE-EXTRACTOR
-Tool used to extract shellcode and lenght from an object/binary file.
+Simple tool developed for study and research reasons, I hope it will be useful.
+The goal is to extract the shellcode and its length from an object/binary file.
 
-### CONTACTS:
-[Neetx](mailto:neetx@protonmail.com)
-
----
-Tool developed for study and research reasons, I hope it will be useful.
 
 ### Usage
 
@@ -50,3 +45,6 @@ Lenght: 25
 ### Testing:
 
 Insert our shellcode into the empty string in shellcode_tester.c or shellcode_tester_macos.c, compile it with gcc and run (remember: on macos gcc is an alias for clang).
+
+### CONTACTS:
+[Neetx](mailto:neetx@protonmail.com)
